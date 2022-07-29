@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&family=Uchen&display=swap');
+body {
+    background-color: #556882;
+   }
+   
+a.link {
+       color: #093e99;
+       text-decoration: underline;
+   }
+   
+.mainHeader {
+       position: relative;
+       text-align: center;
+       font-size: 48px;
+       -webkit-text-stroke:  0.25px rgb(255, 255, 255);
+       font-family: 'Uchen', serif;
+   }
+.optionsMovies {
+    outline: black solid 3px;
+    border-radius: 2px;
+    font-size: x-large;
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.optionsMovies:focus {
+    outline: black solid 3px;
+    border-radius: 2px;
+    background-color: #3498dbcc;
+}
+
+.select-selected {
+    outline: black solid 3px;
+    border-radius: 2px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.reviewContainer {
+    margin-top: 25px;
+    outline: auto;
+    width: 55%;
+    height: 400px;
+}
+
+.reviewContent .reviewText {
+    font-size: 20px;
+}
+
+.reviewContent .title {
+    font-size: 28px;
+    font-family: 'Saira', sans-serif;
+    font-weight: bold;
+    margin-bottom: 0.75px;
+}

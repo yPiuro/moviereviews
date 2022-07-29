@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie reviews!</title>
+    <meta name="title" content="Fancy movie reviews!">
+    <meta name="description" content="This is a fun little project I made for my english class.">
+    <meta name="og:title" content="Fancy movie reviews!">
+    <meta name="og:description" content="This is a fun little project I made for my english class.">   
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+    <link rel="shortcut icon" href="/imgs/favicon.ico">
+    <link rel="manifest" href="imgs/site.webmanifest">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css">
+</head>
+<body>
+<div class="center">
+    <label for="movies" class=" mainHeader text-center">Choose a movie review:</label><br>
+    <select name="movies" title="Movie Reviews" class="optionsMovies" onchange="changeContent()">
+        <option value="0">Hidden Figures</option>
+        <option value="1">Angel Has Fallen</option>
+        <option value="2">The Gray Man</option>
+    </select>
+</div>
+<div class="reviewContainer center">
+    <div class="reviewContent">
+    </div>
+</div>
+</body>
+</html>
+<script src="main.js"></script>
+
