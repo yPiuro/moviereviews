@@ -26,15 +26,12 @@
     <link rel="shortcut icon" href="/imgs/favicon.ico">
     <link rel="manifest" href="imgs/site.webmanifest">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 <div class="center">
-    <label for="movies" class=" mainHeader text-center">Choose a movie review:</label><br>
-    <select name="movies" title="Movie Reviews" class="optionsMovies" onchange="changeContent()">
-        <option value="0">Hidden Figures</option>
-        <option value="1">Angel Has Fallen</option>
-        <option value="2">The Gray Man</option>
+    <label for="movies" class=" mainHeader text-center" id="mainHeader">Choose a movie review:</label><br>
+    <select name="movies" title="Movie Reviews" class="optionsMovies" onchange="changeContent(this.value)">
     </select>
 </div>
 <div class="reviewContainer center">
@@ -44,4 +41,6 @@
 </body>
 </html>
 <script src="main.js"></script>
+
+
 
