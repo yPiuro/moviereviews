@@ -54,7 +54,7 @@ reviewContentVar.innerHTML = reviews[0];
 
 function changeContent() {
     var content = document.querySelector('.optionsMovies').value;
-    debug('Var value',content,false);
+    debug('"Content" Var value',content,false);
     debug('HTML Being served',reviews[content],false)
     reviewContentVar.innerHTML = reviews[content];
 };

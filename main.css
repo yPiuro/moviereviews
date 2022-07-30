@@ -12,8 +12,11 @@ a.link {
        position: relative;
        text-align: center;
        font-size: 48px;
-       -webkit-text-stroke:  0.25px rgb(255, 255, 255);
+       -webkit-text-fill-color: aliceblue;
+       -webkit-text-stroke: 1.5px;
+       -webkit-text-stroke-color: black;
        font-family: 'Uchen', serif;
+       color: aliceblue;
    }
 .optionsMovies {
     outline: black solid 3px;
@@ -47,17 +50,19 @@ a.link {
 .reviewContainer {
     margin-top: 25px;
     outline: auto;
-    width: 55%;
-    height: 400px;
+    height: fit-content;
 }
 
 .reviewContent .reviewText {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .reviewContent .title {
-    font-size: 28px;
+    font-size: 35px;
     font-family: 'Saira', sans-serif;
     font-weight: bold;
     margin-bottom: 0.75px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
 }
