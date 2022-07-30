@@ -59,7 +59,7 @@ function changeContent(movieIndex) {
     <span class='title'>${reviewObj.title}</span>
     <p class='reviewText'>${reviewObj.content}</p>
     ${
-        'rating' in reviewObj ? `<div class='reviewRating'><p class='reviewText'>Overall Rating: <span style='color:${ratingColor};'>${reviewObj.rating}</span>/5</p></a></div>` : ""
+        'rating' in reviewObj ? `<strong><div class='reviewRating'><p class='reviewText'>Overall Rating: <span style='color:${ratingColor};'>${reviewObj.rating}</span>/5</p></a></div></strong>` : ""
     }
     `;
     localStorage.setItem('currentReview', movieIndex);
