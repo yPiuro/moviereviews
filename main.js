@@ -56,6 +56,7 @@ changeContent(localStorage.getItem('currentReview') !== null ? parseInt(localSto
 document.getElementById
 
 // This function just changes the review being displayed on the website depending on the argument (e.g changeContent(2) will be the third movie in the list)
+// it also saves the current review that is being displayed in local storage with a unique numeric ID to display that same review on next page load/open 
 
 function changeContent(movieIndex) {
     let ratingColor = ''
