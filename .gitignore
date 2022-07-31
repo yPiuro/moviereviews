@@ -3,3 +3,4 @@ secret/*
 tailwind.config.js
 secret.js
 reviews.json
+output.css
