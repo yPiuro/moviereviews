@@ -2,3 +2,4 @@ panel.*
 secret/*
 tailwind.config.js
 secret.js
+reviews.json
