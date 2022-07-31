@@ -1,18 +1,23 @@
+// This variable holds all the reviews in JSON format making it a lot easier to add/remove to the review list!
+
 const reviews = [
     { 
         title: "Hidden Figures",
-        content: 
+        //
+        content: /*html*/ 
         `
         Quisque nisi est, vestibulum vel malesuada ac, faucibus ac eros. Duis eget urna et nisl dictum ullamcorper. 
         Donec sagittis ex dolor, quis consectetur nisl cursus a. Etiam a odio tortor. Fusce sodales augue sit amet justo hendrerit, ac molestie elit tincidunt.
         Sed et est cursus, elementum quam a, semper lacus. Nunc vehicula consequat orci in auctor.
         Sed eleifend eget mi ac malesuada. Suspendisse placerat justo nec justo maximus, sit amet commodo eros condimentum. Ut nisi eros, suscipit eget sem bibendum, lobortis aliquam ex.
         Nulla diam arcu, iaculis nec gravida eget, vulputate quis augue. Phasellus vitae ligula velit.`,
+        //
         rating: 4.75
     },
     { 
         title: "Angel has Fallen",
-        content: 
+        //
+        content: /*html*/ 
         `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Suspendisse eu est ullamcorper, auctor libero quis, condimentum quam. 
@@ -24,10 +29,12 @@ const reviews = [
         Sed tellus ante, mattis at dapibus pulvinar, semper sit amet velit. 
         Proin lacus arcu, lobortis vel lacinia non, egestas eu ipsum.
         `,
+        //
         rating: 3.5
     },
     { 
         title: "The Gray Man",
+        //
         content:  /*html*/ 
         `Brandon is <strong>gray</strong>.<br>
         Morbi dapibus mattis euismod. Integer ullamcorper tortor urna, eget viverra ipsum rhoncus accumsan. Sed imperdiet metus quis magna finibus, et imperdiet nisl convallis. 
@@ -35,13 +42,21 @@ const reviews = [
         Mauris convallis dolor id iaculis aliquet. Nam quis turpis interdum, dictum erat consectetur, finibus nisi. Nullam quis vulputate erat. 
         Aenean sit amet iaculis nibh. Nam lacinia dictum erat.
         `,
+        //
         rating: 5
     }
 ]
 
 initOptions();
+
+// This function call updates the review placeholder on the website to the user's previous selection of review if they had opened the website before if not
+// it will set it to the default one (Hidden Figures)
+
 changeContent(localStorage.getItem('currentReview') !== null ? parseInt(localStorage.getItem('currentReview')): 0);
 document.getElementById
+
+// This function just changes the review being displayed on the website depending on the argument (e.g changeContent(2) will be the third movie in the list)
+
 function changeContent(movieIndex) {
     let ratingColor = ''
     const reviewObj = reviews[movieIndex];
@@ -65,6 +80,11 @@ function changeContent(movieIndex) {
     localStorage.setItem('currentReview', movieIndex);
 };
 
+// This function just inserts HTML on load that displays all the options 
+// before this had to be manually done but, after this commint (https://github.com/whstime/moviereviews/commit/ced5e450f12316b2dfce3e13b9470b119475f96a)
+// it got updated with help from a friend (Thanks Masterofcubes)
+// and now it is dynamic meaning if the list of reviews gets updated, this will automatically add the update to the options on the HMTL
+ 
 function initOptions(){
     const savedIndex = localStorage.getItem('currentReview');
     for (let i = 0; i < reviews.length; i++) {
