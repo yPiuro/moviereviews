@@ -75,15 +75,7 @@ function initOptions() {
 // it also saves the reviews to localstorage so if the api ever goes down, I can change the website around to have my latest reviews still being displayed until the api can get back online
 
 async function getReviews() {
-    const response = await fetch(`${API_URL}/getReviews`,
-        {
-            headers: {
-                'access-control-allow-credentials': 'true',
-                'access-control-allow-methods': '*',
-                'Access-Control-Allow-Origin': 'https://movies.piuroprauxy.ml'
-            }
-        }
-    );
+    const response = await fetch(`https://simple-corsunblock.herokuapp.com/${API_URL}/getReviews`);
     const data = await response.json();
     reviews = data.reviews
     localStorage.setItem('ReviewsBackup', JSON.stringify(reviews))
