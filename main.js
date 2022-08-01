@@ -5,52 +5,8 @@ const API_URL = 'https://piuro.masterofcubesau.com/api';
 
 let reviews = ""
 init()
-// [
-//     {
-//         title: "Hidden Figures",
-//         //
-//         content: /*html*/
-//             `
-//         Quisque nisi est, vestibulum vel malesuada ac, faucibus ac eros. Duis eget urna et nisl dictum ullamcorper. 
-//         Donec sagittis ex dolor, quis consectetur nisl cursus a. Etiam a odio tortor. Fusce sodales augue sit amet justo hendrerit, ac molestie elit tincidunt.
-//         Sed et est cursus, elementum quam a, semper lacus. Nunc vehicula consequat orci in auctor.
-//         Sed eleifend eget mi ac malesuada. Suspendisse placerat justo nec justo maximus, sit amet commodo eros condimentum. Ut nisi eros, suscipit eget sem bibendum, lobortis aliquam ex.
-//         Nulla diam arcu, iaculis nec gravida eget, vulputate quis augue. Phasellus vitae ligula velit.`,
-//         //
-//         rating: 4.75
-//     },
-//     {
-//         title: "Angel has Fallen",
-//         //
-//         content: /*html*/
-//             `
-//         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-//         Suspendisse eu est ullamcorper, auctor libero quis, condimentum quam. 
-//         Duis nulla neque, venenatis blandit consectetur sed, tincidunt nec tellus. 
-//         Praesent sed nibh sit amet purus cursus dapibus. 
-//         Etiam sit amet lacus aliquam, lacinia elit aliquet, feugiat leo. 
-//         Aliquam non justo at turpis vestibulum imperdiet quis non lacus. 
-//         Vivamus sollicitudin dolor urna, quis pulvinar risus euismod at. 
-//         Sed tellus ante, mattis at dapibus pulvinar, semper sit amet velit. 
-//         Proin lacus arcu, lobortis vel lacinia non, egestas eu ipsum.
-//         `,
-//         //
-//         rating: 3.5
-//     },
-//     {
-//         title: "The Gray Man",
-//         //
-//         content:  /*html*/
-//             `Brandon is <strong>gray</strong>.<br>
-//         Morbi dapibus mattis euismod. Integer ullamcorper tortor urna, eget viverra ipsum rhoncus accumsan. Sed imperdiet metus quis magna finibus, et imperdiet nisl convallis. 
-//         Suspendisse fringilla velit a pretium pulvinar. Mauris blandit erat erat. Sed ac purus eros. Nulla auctor massa a nibh tristique pharetra. Integer porta imperdiet tristique. 
-//         Mauris convallis dolor id iaculis aliquet. Nam quis turpis interdum, dictum erat consectetur, finibus nisi. Nullam quis vulputate erat. 
-//         Aenean sit amet iaculis nibh. Nam lacinia dictum erat.
-//         `,
-//         //
-//         rating: 5
-//     }
-// ]
+setInterval(init, 60000)
+
 
 // This function calls other functions but awaiys for getReviews to return/finish before doing anything else
 
@@ -61,7 +17,7 @@ async function init() {
     await getReviews();
 
     // This function call just sets the html <option> elements.
-
+    document.querySelector('.optionsMovies').innerHTML = ''
     initOptions();
 
     // This function call updates the review placeholder on the website to the user's previous selection of review if they had opened the website before if not
@@ -111,4 +67,5 @@ async function getReviews() {
     const response = await fetch(`${API_URL}/getReviews`);
     const data = await response.json();
     reviews = data.reviews
+    localStorage.setItem('ReviewsBackup', JSON.stringify(reviews))
 }
