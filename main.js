@@ -2,9 +2,16 @@
 
 const API_URL = 'https://piuro.masterofcubesau.com/api';
 
+// This variable gets set to nothing on page load, just cause idk.
 
 let reviews = ""
+
+// Calls the init function, basically intiates the whole process of getting stuff
+
 init()
+
+// Frequently updates the displayed html every minute, making it basically instant if I ever add something to the api
+
 setInterval(init, 60000)
 
 
@@ -62,6 +69,10 @@ function initOptions() {
         document.querySelector('.optionsMovies').innerHTML += `<option ${savedIndex !== null && i === parseInt(savedIndex) ? "selected" : ""} value=${i}>${reviews[i].title}</option>\n`
     };
 }
+
+// This function pulls the reviews off a api that MOC made for me on his webserver (very simple, only 3 requests available) also has 
+// very simple auth for the secret part of the website that can add / remove reviews
+// it also saves the reviews to localstorage so if the api ever goes down, I can change the website around to have my latest reviews still being displayed until the api can get back online
 
 async function getReviews() {
     const response = await fetch(`${API_URL}/getReviews`);
