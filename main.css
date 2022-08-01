@@ -1,21 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira&family=Uchen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&display=swap');
+
 :root {
     --bg-color: #202122;
-  }
+}
 
 ::-webkit-scrollbar {
-    width: 10px; /* Mostly for vertical scrollbars */
-    height: 10px; /* Mostly for horizontal scrollbars */
-  }
-::-webkit-scrollbar-thumb { /* Foreground */
-    background: #999;
-  }
-::-webkit-scrollbar-track { /* Background */
-    background: var(--bg-color);
-  }
+    width: 10px;
+    /* Mostly for vertical scrollbars */
+    height: 10px;
+    /* Mostly for horizontal scrollbars */
+}
 
-  .reviewContent .reviewText {
+::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: #999;
+}
+
+::-webkit-scrollbar-track {
+    /* Background */
+    background: var(--bg-color);
+}
+
+.reviewContent .reviewText {
     font-size: 25px;
     color: aliceblue;
     font-family: 'Saira', sans-serif;
@@ -25,23 +33,24 @@ body {
     background-color: var(--bg-color);
     height: 100%;
     width: 100%;
-   }
-   
+}
+
 a.link {
-       color: #093e99;
-       text-decoration: underline;
-   }
-   
+    color: #093e99;
+    text-decoration: underline;
+}
+
 .mainHeader {
-       position: relative;
-       text-align: center;
-       font-size: 48px;
-       -webkit-text-fill-color: aliceblue;
-       -webkit-text-stroke: 2.5px;
-       -webkit-text-stroke-color: black;
-       font-family: 'Bebas Neue', cursive;
-       color: aliceblue;
-   }
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    -webkit-text-fill-color: aliceblue;
+    -webkit-text-stroke: 2.5px;
+    -webkit-text-stroke-color: black;
+    font-family: 'Bebas Neue', cursive;
+    color: aliceblue;
+}
+
 .optionsMovies {
     outline: black solid 3px;
     border-radius: 2px;
@@ -98,8 +107,8 @@ a.link {
         font-size: 60px !important;
     }
 
-    label.mainHeader{
-       font-size: 70px; 
+    label.mainHeader {
+        font-size: 70px;
     }
 
     select.optionsMovies {
@@ -116,11 +125,11 @@ a.link {
         text-align: center;
         width: 100%;
     }
-    
+
     .reviewRating .reviewText {
         font-size: 3rem;
     }
-    
+
 }
 
 
@@ -130,8 +139,8 @@ a.link {
         font-size: 60px !important;
     }
 
-    label.mainHeader{
-       font-size: 70px; 
+    label.mainHeader {
+        font-size: 70px;
     }
 
     select.optionsMovies {
@@ -146,11 +155,11 @@ a.link {
         text-align: center;
         width: 100%;
     }
-    
+
     .reviewRating .reviewText {
         font-size: 3rem;
     }
-    
+
 }
 
 @media screen and (max-height:655px) and (min-width:1366px) {
