@@ -100,6 +100,7 @@ a.link {
     -webkit-text-stroke-color: black;
     font-family: 'Bebas Neue', cursive;
     font-weight: lighter;
+    position: relative;
 }
 
 @media screen and (min-height:800px) and (min-width:1366px) {
@@ -117,11 +118,10 @@ a.link {
 
     .reviewContainer {
         min-height: 580px;
+        max-width: 95%;
     }
 
     .reviewRating {
-        position: absolute;
-        bottom: 25px;
         text-align: center;
         width: 100%;
     }
