@@ -1,21 +1,21 @@
-// This variable holds all the reviews in JSON format making it a lot easier to add/remove to the review list!
+// This variable holds the base url for the api, used later for the requests.
 
 const API_URL = 'https://piuro.masterofcubesau.com/api';
 
-// This variable gets set to nothing on page load, just cause idk.
+// This variable gets set to the "backup" local storage (only works if you have been to the website before) on start even though it changes if the api is up.
 
-let reviews = ""
+let reviews = localStorage.getItem('ReviewsBackup')
 
-// Calls the init function, basically intiates the whole process of getting stuff
+// Calls the init function, basically intiates the whole process of getting movie reviews from api and then it loads/changes all required html on the page.
 
 init()
 
-// Frequently updates the displayed html every minute, making it basically instant if I ever add something to the api
+// Frequently updates the displayed html every minute, making it basically instant if I ever add a review to the api/data.
 
 setInterval(init, 6000)
 
 
-// This function calls other functions but awaiys for getReviews to return/finish before doing anything else
+// This function calls other functions but awaits for getReviews to return/finish before doing anything else
 
 async function init() {
 
@@ -24,6 +24,7 @@ async function init() {
     await getReviews();
 
     // This function call just sets the html <option> elements.
+    
     document.querySelector('.optionsMovies').innerHTML = ''
     initOptions();
 
@@ -47,7 +48,8 @@ function changeContent(movieIndex) {
         } else {
             ratingColor = '#AD6208'
         }
-    }
+    };
+    
     document.querySelector('.reviewContent').innerHTML =
         `
     <span class='title'>${reviewObj.title}</span>
@@ -55,6 +57,7 @@ function changeContent(movieIndex) {
     ${'rating' in reviewObj ? `<br><strong><div class='reviewRating'><p class='reviewText'>Overall Rating: <span style='color:${ratingColor};'>${reviewObj.rating}</span>/5</p></a></div></strong>` : ""
         }
     `;
+    
     localStorage.setItem('currentReview', movieIndex);
 };
 
@@ -68,7 +71,7 @@ function initOptions() {
     for (let i = 0; i < reviews.length; i++) {
         document.querySelector('.optionsMovies').innerHTML += `<option ${savedIndex !== null && i === parseInt(savedIndex) ? "selected" : ""} value=${i}>${reviews[i].title}</option>\n`
     };
-}
+};
 
 // This function pulls the reviews off a api that MOC made for me on his webserver (very simple, only 3 requests available) also has 
 // very simple auth for the secret part of the website that can add / remove reviews
