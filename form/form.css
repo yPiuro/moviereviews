@@ -118,7 +118,6 @@ textarea[name="senderEmail"] {
 textarea[name="reviewChanges"] {
     max-width: 75%;
     min-height: 120px;
-    max-height: 500px;
 }
 
 .mainHeader {
