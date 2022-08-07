@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&family=Uchen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --bg-color: #141414;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* Mostly for vertical scrollbars */
+    height: 10px;
+    /* Mostly for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: #999;
+}
+
+::-webkit-scrollbar-track {
+    /* Background */
+    background: var(--bg-color);
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+a.link {
+    color: #093e99;
+    text-decoration: underline;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.reviewContainer {
+    padding: 15px;
+    height: fit-content;
+    max-width: 75%;
+    position: relative;
+}
+
+
+.title {
+    margin-bottom: 0.25px;
+    font-size: 50px;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+}
+
+input {
+    margin: 25px;
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Saira', sans-serif;
+    color: aliceblue;
+    outline: black solid 3px;
+    border-radius: 2px;
+    background-color: #1d2d38;
+    cursor: pointer;
+    padding: 5px;
+    -webkit-transition: 0.35s;
+    transition: 0.35s;
+    width: 15%;
+}
+
+input:hover {
+    outline: aliceblue solid 3px;
+    border-radius: 0px;
+    background-color: #334450;
+    color: #0a0a0a;
+}
+
+
+textarea[type=text] {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid rgb(0, 0, 0);
+    -webkit-transition: 0.35s;
+    transition: 0.35s;
+    outline: none;
+    height: fit-content;
+    resize: none;
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 12px;
+    color: aliceblue;
+}
+
+textarea[type=text]:focus {
+    border: 3px solid rgb(156, 156, 156);
+    border-radius: 6px;
+}
+
+textarea[name="movieTitle"] {
+    font-size: 30px;
+    min-width: 30%;
+    width: fit-content;
+    height: 80px;
+}
+
+textarea[name="senderEmail"] {
+    font-size: 30px;
+    min-width: 30%;
+    width: fit-content;
+    height: 80px;
+}
+
+textarea[name="reviewChanges"] {
+    max-width: 75%;
+    min-height: 120px;
+    max-height: 500px;
+}
+
+.mainHeader {
+    text-align: center;
+    font-size: 68px;
+    color: rgb(0, 0, 0);
+    font-family: 'Bebas Neue', cursive;
+    background-color: aliceblue;
+    margin-top: 0;
+    padding-top: 0;
+}

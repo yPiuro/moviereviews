@@ -40,6 +40,29 @@ a.link {
     text-decoration: underline;
 }
 
+.buttonForm {
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Saira', sans-serif;
+    color: aliceblue;
+    outline: black solid 3px;
+    border-radius: 2px;
+    background-color: #1d2d38;
+    cursor: pointer;
+    margin-bottom: 25px;
+    padding: 5px;
+    -webkit-transition: 0.55s;
+    transition: 0.55s;
+}
+
+.buttonForm:hover {
+    outline: aliceblue solid 3px;
+    border-radius: 0px;
+    background-color: #334450;
+    color: #0a0a0a;
+}
+
 .mainHeader {
     position: relative;
     text-align: center;
