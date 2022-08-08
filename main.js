@@ -12,7 +12,7 @@ init()
 
 // Frequently updates the displayed html every minute, making it basically instant if I ever add a review to the api/data.
 
-setInterval(init, 6000)
+// setInterval(init, 6000)
 
 
 // This function calls other functions but awaits for getReviews to return/finish before doing anything else
