@@ -4,7 +4,7 @@ const API_URL = 'https://piuro.masterofcubesau.com/api';
 
 // This variable gets set to the "backup" local storage (only works if you have been to the website before) on start even though it changes if the api is up.
 
-let reviews = localStorage.getItem('ReviewsBackup')
+let reviews = JSON.parse(localStorage.getItem('ReviewsBackup'))
 
 // Calls the init function, basically intiates the whole process of getting movie reviews from api and then it loads/changes all required html on the page.
 
