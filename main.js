@@ -21,10 +21,10 @@ async function init() {
 
     // This function call just gets the reviews from a api that my friend made!
 
-    await getReviews();
+    // await getReviews();
 
     // This function call just sets the html <option> elements.
-    
+
     document.querySelector('.optionsMovies').innerHTML = ''
     initOptions();
 
@@ -49,7 +49,7 @@ function changeContent(movieIndex) {
             ratingColor = '#AD6208'
         }
     };
-    
+
     document.querySelector('.reviewContent').innerHTML =
         `
     <span class='title'>${reviewObj.title}</span>
@@ -57,7 +57,7 @@ function changeContent(movieIndex) {
     ${'rating' in reviewObj ? `<br><strong><div class='reviewRating'><p class='reviewText'>Overall Rating: <span style='color:${ratingColor};'>${reviewObj.rating}</span>/5</p></a></div></strong>` : ""
         }
     `;
-    
+
     localStorage.setItem('currentReview', movieIndex);
 };
 
