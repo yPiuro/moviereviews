@@ -30,6 +30,17 @@ async function sendForm() {
             "content": content,
         }
     }));
-    const response = xhr.response;
-    console.log(response)
+    let response = xhr.response
+    xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+    if (response == "email has been sent") {
+        alert('Sent request!')
+        console.log(response)
+    }
+    else {
+        console.log(response)
+        alert('Something went wrong.')
+    }
+    }
+ }
 }
