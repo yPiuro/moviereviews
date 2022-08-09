@@ -28,6 +28,7 @@ async function sendForm() {
             "title": title,
             "name": name,
             "content": content
+			"email": [name],
         }
     }));
     const response = xhr.response;
