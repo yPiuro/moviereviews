@@ -31,4 +31,5 @@ async function sendForm() {
         }
     }));
     const response = xhr.response;
+    console.log(JSON.stringify(response))
 }
