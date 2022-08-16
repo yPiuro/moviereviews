@@ -27,7 +27,7 @@ async function sendForm() {
         "body": {
             "title": title,
             "name": name,
-            "content": content,
+            "content": content
         }
     }));
     let response = xhr.response
@@ -41,6 +41,6 @@ async function sendForm() {
         console.log(response)
         alert('Something went wrong.')
     }
-    }
+   }
  }
 }
