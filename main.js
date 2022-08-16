@@ -88,6 +88,10 @@ function movieIndexTest() {
     if (movieIndexGlobal + 1 > reviews.length) {
         return true
     }
+
+    else {
+        return false
+    }
 }
 
 // This function just inserts HTML on load that displays all the options 
