@@ -21,7 +21,7 @@ async function sendForm() {
     const content = document.getElementById("reviewChangesInput").value;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://api.piuroprauxy.ml/form", true);
-    xhr.setRequestHeader('Content-Type', 'application/json')
+    xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
         email: [name],
         "body": {
@@ -30,17 +30,15 @@ async function sendForm() {
             "content": content
         }
     }));
-    let response = xhr.response
-    xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-    if (response == "email has been sent") {
-        alert('Sent request!')
-        console.log(response)
+    xhr.onload = function () {
+        let response = xhr.response
+        if (response === "email has been sent") {
+            alert('Sent request!')
+            console.log(response)
+        }
+        else {
+            console.log(response)
+            alert('Something went wrong.')
+        }
     }
-    else {
-        console.log(response)
-        alert('Something went wrong.')
-    }
-   }
- }
 }
