@@ -30,19 +30,8 @@ async function init() {
 
     // This function call updates the review placeholder on the website to the user's previous selection of review if they had opened the website before if not
     // it will set it to the default one (Hidden Figures)
-    function changeContentVal() {
-        if (localStorage.getItem('currentReview') !== null) {
-            for (const review of reviews)
-                if (review.id === parseInt(localStorage.getItem('currentReview'))) {
-                    return parseInt(localStorage.getItem('currentReview'))
-                }
-        }
-        else {
-            return 0
-        }
-    }
 
-    changeContent(changeContentVal());
+    changeContent(localStorage.getItem('currentReview') !== null ? parseInt(localStorage.getItem('currentReview')) : 0);
 }
 
 // This function just changes the review being displayed on the website depending on the argument (e.g changeContent(2) will be the third movie in the list)
