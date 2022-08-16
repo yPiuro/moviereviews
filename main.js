@@ -24,7 +24,7 @@ async function init() {
     await getReviews();
 
     // This function call just sets the html <option> elements.
-    
+
     document.querySelector('.optionsMovies').innerHTML = ''
     initOptions();
 
@@ -49,7 +49,7 @@ function changeContent(movieIndex) {
             ratingColor = '#AD6208'
         }
     };
-    
+
     document.querySelector('.reviewContent').innerHTML =
         `
     <span class='title'>${reviewObj.title}</span>
@@ -57,7 +57,7 @@ function changeContent(movieIndex) {
     ${'rating' in reviewObj ? `<br><strong><div class='reviewRating'><p class='reviewText'>Overall Rating: <span style='color:${ratingColor};'>${reviewObj.rating}</span>/5</p></a></div></strong>` : ""
         }
     `;
-    
+
     localStorage.setItem('currentReview', movieIndex);
 };
 
@@ -78,7 +78,7 @@ function initOptions() {
 // it also saves the reviews to localstorage so if the api ever goes down, I can change the website around to have my latest reviews still being displayed until the api can get back online
 
 async function getReviews() {
-    const response = await fetch(`https://cors.piuroprauxy.ml/${API_URL}/getReviews`);
+    const response = await fetch(`https://api.piuroprauxy.ml/reviews`);
     const data = await response.json();
     reviews = data.reviews
     localStorage.setItem('ReviewsBackup', JSON.stringify(reviews))
