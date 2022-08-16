@@ -50,7 +50,7 @@ function changeContent(movieIndex) {
         reviewObj = reviews[movieIndex];
         localStorage.setItem('currentReview', movieIndex);
     }
-    else if (0 < reviews.length) {
+    else if (1 = reviews.length) {
         localStorage.setItem('currentReview', 0);
         reviewObj = reviews[0]
     }
@@ -86,10 +86,6 @@ function changeContent(movieIndex) {
 function movieIndexTest() {
 
     if (movieIndexGlobal + 1 > reviews.length) {
-        return false
-    }
-
-    else {
         return true
     }
 }
