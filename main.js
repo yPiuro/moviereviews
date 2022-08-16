@@ -6,6 +6,8 @@ const API_URL = 'https://piuro.masterofcubesau.com/api';
 
 let reviews = localStorage.getItem('ReviewsBackup')
 
+let movieIndexGlobal
+
 // Calls the init function, basically intiates the whole process of getting movie reviews from api and then it loads/changes all required html on the page.
 
 init()
@@ -38,8 +40,30 @@ async function init() {
 // it also saves the current review that is being displayed in local storage with a unique numeric ID to display that same review on next page load/open 
 
 function changeContent(movieIndex) {
-    let ratingColor = ''
-    const reviewObj = reviews[movieIndex];
+    let ratingColor = '';
+
+    let reviewObj;
+
+    movieIndexGlobal = movieIndex
+    console.log(movieIndexTest())
+    if (movieIndexTest() == true) {
+        reviewObj = reviews[movieIndex];
+        localStorage.setItem('currentReview', movieIndex);
+    }
+    else if (0 < reviews.length) {
+        localStorage.setItem('currentReview', 0);
+        reviewObj = reviews[0]
+    }
+    else {
+        reviewObj = {
+            title: "Reviews are currently getting written",
+            content: "Please check back later!",
+            id: 0
+        }
+        document.querySelector('.optionsMovies').innerHTML += `<option "selected" value=0>${reviewObj.title}</option>\n`
+        localStorage.setItem('currentReview', 0);
+    }
+
     if ('rating' in reviewObj) {
         if (reviewObj.rating >= 4) {
             ratingColor = 'yellow'
@@ -57,9 +81,18 @@ function changeContent(movieIndex) {
     ${'rating' in reviewObj ? `<br><strong><div class='reviewRating'><p class='reviewText'>Overall Rating: <span style='color:${ratingColor};'>${reviewObj.rating}</span>/5</p></a></div></strong>` : ""
         }
     `;
-
-    localStorage.setItem('currentReview', movieIndex);
 };
+
+function movieIndexTest() {
+
+    if (movieIndexGlobal + 1 > reviews.length) {
+        return false
+    }
+
+    else {
+        return true
+    }
+}
 
 // This function just inserts HTML on load that displays all the options 
 // before this had to be manually done but, after this commint (https://github.com/whstime/moviereviews/commit/ced5e450f12316b2dfce3e13b9470b119475f96a)
