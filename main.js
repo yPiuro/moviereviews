@@ -44,17 +44,7 @@ function changeContent(movieIndex) {
 
     let reviewObj;
 
-    movieIndexGlobal = movieIndex
-    console.log(movieIndexTest())
-    if (movieIndexTest() == true) {
-        reviewObj = reviews[movieIndex];
-        localStorage.setItem('currentReview', movieIndex);
-    }
-    else if (1 = reviews.length) {
-        localStorage.setItem('currentReview', 0);
-        reviewObj = reviews[0]
-    }
-    else {
+    if (reviews == null) {
         reviewObj = {
             title: "Reviews are currently getting written",
             content: "Please check back later!",
@@ -62,6 +52,16 @@ function changeContent(movieIndex) {
         }
         document.querySelector('.optionsMovies').innerHTML += `<option "selected" value=0>${reviewObj.title}</option>\n`
         localStorage.setItem('currentReview', 0);
+    }
+
+    else if (movieIndex >= reviews.length) {
+        reviewObj = reviews[0];
+        localStorage.setItem('currentReview', 0);
+    }
+
+    else {
+        reviewObj = reviews[movieIndex];
+        localStorage.setItem('currentReview', movieIndex);
     }
 
     if ('rating' in reviewObj) {
@@ -82,17 +82,6 @@ function changeContent(movieIndex) {
         }
     `;
 };
-
-function movieIndexTest() {
-
-    if (movieIndexGlobal + 1 > reviews.length) {
-        return true
-    }
-
-    else {
-        return false
-    }
-}
 
 // This function just inserts HTML on load that displays all the options 
 // before this had to be manually done but, after this commint (https://github.com/whstime/moviereviews/commit/ced5e450f12316b2dfce3e13b9470b119475f96a)
