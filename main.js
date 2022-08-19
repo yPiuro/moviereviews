@@ -1,6 +1,8 @@
 // This variable gets set to the "backup" local storage (only works if you have been to the website before) on start even though it changes if the api is up.
 
-let reviews = localStorage.getItem('ReviewsBackup') ? localStorage.getlocalStorage.getItem('ReviewsBackup') : []
+let reviews
+
+localStorage.getItem('ReviewsBackup') ? reviews = localStorage.getItem('ReviewsBackup') : reviews = []
 
 let movieIndexGlobal
 
