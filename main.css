@@ -27,6 +27,7 @@
     font-size: 25px;
     color: aliceblue;
     font-family: 'Saira', sans-serif;
+    text-align: left !important;
 }
 
 body {
